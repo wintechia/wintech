@@ -97,6 +97,23 @@ export function DemoPageClient({ nicho, allNichos }: { nicho: NichoData; allNich
   const submitForm = async () => {
     if (!formData?.nombre || !formData?.email) return;
     try {
+      // Guardar reserva en la base de datos
+      await fetch('/api/reservas', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          telefono: formData.telefono || null,
+          empresa: formData.empresa || null,
+          nicho: nicho?.id,
+          servicio: `Demo ${nicho?.title}`,
+          fecha: new Date(Date.now() + 86400000).toISOString(), // Mañana
+          hora: '09:00',
+          notas: 'Solicitud desde demo interactiva',
+        }),
+      });
+      // También enviar notificación por email
       await fetch('/api/demo-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
