@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#0A2463"/>
+  <path d="M60 70 L85 170 L110 100 L135 170 L160 70" stroke="#3BCEAC" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="85" cy="170" r="6" fill="#3BCEAC"/>
+  <circle cx="135" cy="170" r="6" fill="#3BCEAC"/>
+  <circle cx="60" cy="70" r="6" fill="#3BCEAC"/>
+  <circle cx="160" cy="70" r="6" fill="#3BCEAC"/>
+  <circle cx="110" cy="100" r="6" fill="#3BCEAC"/>
+  <line x1="85" y1="170" x2="70" y2="190" stroke="#3BCEAC" stroke-width="3"/>
+  <line x1="135" y1="170" x2="150" y2="190" stroke="#3BCEAC" stroke-width="3"/>
+  <line x1="60" y1="70" x2="45" y2="50" stroke="#3BCEAC" stroke-width="3"/>
+  <line x1="160" y1="70" x2="175" y2="50" stroke="#3BCEAC" stroke-width="3"/>
+  <line x1="110" y1="100" x2="125" y2="85" stroke="#3BCEAC" stroke-width="3"/>
+  <circle cx="70" cy="190" r="4" fill="#3BCEAC"/>
+  <circle cx="150" cy="190" r="4" fill="#3BCEAC"/>
+  <circle cx="45" cy="50" r="4" fill="#3BCEAC"/>
+  <circle cx="175" cy="50" r="4" fill="#3BCEAC"/>
+  <circle cx="125" cy="85" r="4" fill="#3BCEAC"/>
+  <path d="M175 120 L195 120 M185 110 L185 130" stroke="#3BCEAC" stroke-width="3" stroke-linecap="round"/>
+  <path d="M200 140 L210 150 L200 160" stroke="#3BCEAC" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

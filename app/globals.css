@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 21%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 21%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 21%;
+    --primary: 222 80% 21%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 163 55% 50%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 163 55% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 222 80% 21%;
+    --radius: 0.75rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 163 55% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 47% 21%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 163 55% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 163 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  [data-hydration-error] { display: none !important; }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #3BCEAC, #0A2463);
+  }
+  .bg-wintech-dark {
+    background-color: #0A2463;
+  }
+  .bg-wintech-cyan {
+    background-color: #3BCEAC;
+  }
+  .bg-wintech-orange {
+    background-color: #FF6B35;
+  }
+  .text-wintech-dark {
+    color: #0A2463;
+  }
+  .text-wintech-cyan {
+    color: #3BCEAC;
+  }
+  .text-wintech-orange {
+    color: #FF6B35;
+  }
+  .border-wintech-cyan {
+    border-color: #3BCEAC;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
