@@ -1,6 +1,9 @@
 export const dynamic = 'force-dynamic';
 import { WINTECH_SYSTEM_PROMPT, getNichoChatPrompt } from '@/lib/chatbot-system-prompt';
 
+// OpenRouter free models - prioritized by capability
+const FREE_MODEL = 'openrouter/free'; // Auto-selects best free model
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -20,24 +23,26 @@ export async function POST(request: Request) {
       ...(messages ?? []).map((m: any) => ({ role: m?.role ?? 'user', content: m?.content ?? '' })),
     ];
 
-    const response = await fetch('https://apps.abacus.ai/v1/chat/completions', {
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.ABACUSAI_API_KEY}`,
+        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://wintech.agency',
+        'X-Title': 'WinTech AI Agency',
       },
       body: JSON.stringify({
-        model: 'gpt-5.4-mini',
+        model: FREE_MODEL,
         messages: apiMessages,
         stream: true,
-        max_tokens: 1000,
+        max_tokens: 2000,
         temperature: 0.7,
       }),
     });
 
     if (!response?.ok) {
       const errText = await response?.text?.() ?? 'Unknown error';
-      console.error('LLM API error:', errText);
+      console.error('OpenRouter API error:', errText);
       return new Response(JSON.stringify({ error: 'Error al procesar la solicitud' }), { status: 500 });
     }
 
