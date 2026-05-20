@@ -1,10 +1,5 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npx prisma generate && npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install --legacy-peer-deps",
-  "regions": ["iad1"],
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://wintech.agency"
-  }
+  "buildCommand": "npx prisma generate && next build",
+  "installCommand": "npm install --legacy-peer-deps"
 }
