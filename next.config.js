@@ -1,14 +1,11 @@
-
 const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to complete even with type errors
-    ignoreBuildErrors: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   webpack(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
