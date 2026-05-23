@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
         empresa: empresa || null,
         nicho,
         servicio,
-        fecha: new Date(fecha),
+        fecha: fecha,
         hora,
         notas: notas || null,
         estado: 'pendiente',

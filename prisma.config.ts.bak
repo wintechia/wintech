@@ -1,0 +1,11 @@
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient({
+  // Use a direct database connection
+  adapter: {
+    type: 'postgresql',
+    url: process.env.DATABASE_URL,
+  },
+})
+
+export default prisma

@@ -1,0 +1,1 @@
+# WinTech AI MVP\n\nInitial commit.

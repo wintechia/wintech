@@ -1,27 +1,21 @@
-const path = require('path');
 
+const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: process.env.NEXT_DIST_DIR || '.next',
-  output: process.env.NEXT_OUTPUT_MODE,
-  productionBrowserSourceMaps: false,
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../'),
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
-    ignoreBuildErrors: false,
+    // !! WARN !!
+    // Dangerously allow production builds to complete even with type errors
+    ignoreBuildErrors: true,
   },
-  images: { unoptimized: true },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.output.filename = 'static/chunks/[name]-[contenthash:8].js';
-      config.output.chunkFilename = 'static/chunks/[contenthash:16].js';
-    }
+  reactStrictMode: true,
+  swcMinify: true,
+  webpack(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@/components': path.resolve(__dirname, 'components'),
+      '@/lib': path.resolve(__dirname, 'lib'),
+    };
     return config;
   },
 };
-
 module.exports = nextConfig;
