@@ -1,5 +1,5 @@
 import { NICHOS } from '@/lib/constants';
-import { DemoPageClient } from './_components/demo-page-client';
+import { DemoPageClient } from '../_components/demo-page-client';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
