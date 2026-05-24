@@ -4,9 +4,20 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [functions]
   node_bundler = "esbuild"
+  included_files = ["prisma/**"]
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/next_api"
+  status = 200
