@@ -2,6 +2,9 @@ const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    webpackBuildWorker: true,
+  },
   reactStrictMode: true,
   swcMinify: true,
   typescript: {
