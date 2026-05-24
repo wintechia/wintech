@@ -1,3 +1,1 @@
-import HomePage from './(public)/page';
-
-export default HomePage;
+export { default } from './(public)/page';
