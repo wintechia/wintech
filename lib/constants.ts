@@ -9,9 +9,10 @@ export const SERVICES = [
   {
     id: "chatbot-ia",
     title: "Chatbot IA",
+    shortDesc: "Atención automática 24/7 para WhatsApp y tu web. Califica leads y agenda citas.",
     description: "Atención automática 24/7 para WhatsApp y tu web. Califica leads y agenda citas sin intervención humana.",
-    icon: "MessageSquare",
-    image: "/images/services/chatbot.jpg",
+    icon: "MessageSquareText",
+    image: "/images/services/chatbot.svg",
     benefits: [
       "Atención 24/7 sin interrupciones",
       "Calificación automática de leads",
@@ -25,9 +26,10 @@ export const SERVICES = [
   {
     id: "recepcionista-voz",
     title: "Recepcionista de Voz IA",
+    shortDesc: "Wincho AI atiende llamadas, agenda citas y responde preguntas con voz natural.",
     description: "Wincho AI atiende llamadas, agenda citas y responde preguntas frecuentes con voz natural.",
     icon: "Phone",
-    image: "/images/services/voz-ia.jpg",
+    image: "/images/services/voz-ia.svg",
     benefits: [
       "Atención telefónica 24/7",
       "Voz natural en español colombiano",
@@ -41,9 +43,10 @@ export const SERVICES = [
   {
     id: "automatizacion",
     title: "Automatización de Marketing",
+    shortDesc: "Secuencias de seguimiento por email y WhatsApp que convierten leads en clientes.",
     description: "Secuencias de seguimiento por email y WhatsApp que convierten leads en clientes.",
     icon: "Zap",
-    image: "/images/services/automatizacion.jpg",
+    image: "/images/services/automatizacion.svg",
     benefits: [
       "Secuencias de email personalizadas",
       "Campañas de WhatsApp masivas",
@@ -57,9 +60,10 @@ export const SERVICES = [
   {
     id: "seo-local",
     title: "SEO Local + Google Business",
+    shortDesc: "Posiciona tu negocio en Google Maps y búsquedas locales para atraer clientes.",
     description: "Posiciona tu negocio en Google Maps y búsquedas locales para atraer clientes cercanos.",
     icon: "MapPin",
-    image: "/images/services/seo-local.jpg",
+    image: "/images/services/seo-local.svg",
     benefits: [
       "Optimización de Google Business Profile",
       "Gestión y respuesta de reseñas",
@@ -70,6 +74,23 @@ export const SERVICES = [
     roi: "Aparece en el 87% de las búsquedas locales de tus clientes potenciales. Aumenta visitas web un 200%.",
     precio: "Desde $297.000/mes",
   },
+  {
+    id: "wincho-ai",
+    title: "Wincho AI - Asistente de Voz",
+    shortDesc: "Asistente de voz con IA que atiende llamadas, agenda citas y responde 24/7 con voz natural.",
+    description: "Wincho AI es nuestro producto estrella. Un asistente de voz con inteligencia artificial que atiende llamadas telefónicas, agenda citas, responde preguntas frecuentes y captura leads con voz natural en español colombiano.",
+    icon: "Phone",
+    image: "/images/services/voz-ia.svg",
+    benefits: [
+      "Atención telefónica 24/7 con voz natural",
+      "Agendamiento automático de citas",
+      "Captura de leads por teléfono",
+      "Integración con CRM y calendario",
+      "Voz natural en español colombiano",
+    ],
+    roi: "Recupera el 80% de llamadas perdidas. Cada llamada atendida es un cliente potencial capturado.",
+    precio: "Desde $797.000/mes",
+  },
 ];
 
 export const NICHOS = [
@@ -79,7 +100,7 @@ export const NICHOS = [
     description: "Agenda citas automáticas, envía recordatorios pre/post procedimiento y captura leads de Instagram.",
     icon: "Sparkles",
     color: "from-pink-500 to-rose-500",
-    image: "/images/nichos/clinica-estetica.jpg",
+    image: "/images/nichos/clinica-estetica.svg",
     chatPrompt: "clinica-estetica",
   },
   {
@@ -88,7 +109,7 @@ export const NICHOS = [
     description: "Reduce inasistencias con recordatorios inteligentes y atiende consultas fuera de horario.",
     icon: "Smile",
     color: "from-blue-500 to-cyan-500",
-    image: "/images/nichos/dentista.jpg",
+    image: "/images/nichos/dentista.svg",
     chatPrompt: "dentistas",
   },
   {
@@ -97,7 +118,7 @@ export const NICHOS = [
     description: "Captura consultas urgentes 24/7, clasifica casos potenciales y agenda consultas iniciales.",
     icon: "Scale",
     color: "from-amber-500 to-orange-500",
-    image: "/images/nichos/abogados.jpg",
+    image: "/images/nichos/abogados.svg",
     chatPrompt: "abogados",
   },
   {
@@ -106,7 +127,7 @@ export const NICHOS = [
     description: "Agenda servicios, envía recordatorios de mantenimiento y responde consultas sobre precios.",
     icon: "Wrench",
     color: "from-green-500 to-emerald-500",
-    image: "/images/nichos/taller.jpg",
+    image: "/images/nichos/taller.svg",
     chatPrompt: "talleres",
   },
   {
@@ -115,7 +136,7 @@ export const NICHOS = [
     description: "Atiende consultas de propiedades fuera de horario, agenda visitas y captura datos de compradores.",
     icon: "Building",
     color: "from-purple-500 to-violet-500",
-    image: "/images/nichos/inmobiliaria.jpg",
+    image: "/images/nichos/inmobiliaria.svg",
     chatPrompt: "inmobiliarios",
   },
 ];
@@ -124,25 +145,27 @@ export const PLANS = [
   {
     id: "starter",
     name: "Starter",
-    price: "$497",
+    tagline: "Para negocios que empiezan con IA",
+    price: "$497.000",
     period: "/mes",
-    description: "Para negocios que empiezan con IA",
+    popular: false,
     features: [
       "Chatbot WhatsApp básico",
       "1 nicho configurado",
       "500 conversaciones/mes",
       "Soporte por email",
       "Reportes básicos",
+      "Dashboard de métricas",
     ],
-    highlighted: false,
-    cta: "Comenzar",
+    cta: "Empezar Ahora",
   },
   {
     id: "growth",
     name: "Growth",
-    price: "$997",
+    tagline: "Para negocios en crecimiento",
+    price: "$997.000",
     period: "/mes",
-    description: "Para negocios en crecimiento",
+    popular: true,
     features: [
       "Chatbot WhatsApp avanzado",
       "Recepcionista de voz (Wincho AI)",
@@ -151,16 +174,17 @@ export const PLANS = [
       "Automatización de marketing",
       "Soporte prioritario",
       "Reportes avanzados",
+      "Dashboard en tiempo real",
     ],
-    highlighted: true,
     cta: "Más Popular",
   },
   {
     id: "enterprise",
     name: "Enterprise",
+    tagline: "Para operaciones a escala",
     price: "Personalizado",
     period: "",
-    description: "Para operaciones a escala",
+    popular: false,
     features: [
       "Todo de Growth",
       "Nichos ilimitados",
@@ -169,8 +193,8 @@ export const PLANS = [
       "Account manager dedicado",
       "SLA garantizado",
       "Onboarding presencial",
+      "Soporte 24/7 prioritario",
     ],
-    highlighted: false,
     cta: "Contáctanos",
   },
 ];

@@ -8,6 +8,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { ChatbotWidget } from '@/components/chatbot-widget';
+import { WinchoVoiceAssistant } from '@/components/wincho-voice-assistant';
 import Script from 'next/script';
 
 export const dynamic = 'force-dynamic';
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollToTop />
           <WhatsAppButton />
           <ChatbotWidget />
+          <WinchoVoiceAssistant />
         </Providers>
       </body>
     </html>
