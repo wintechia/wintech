@@ -1,79 +1,9 @@
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
-
-model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  password      String
-  name          String?
-  role          String    @default("admin")
-  emailVerified DateTime?
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-}
-
-model Lead {
-  id          String   @id @default(cuid())
-  nombre      String
-  email       String
-  telefono    String?
-  empresa     String?
-  nicho       String?
-  planInteres String?
-  mensaje     String?
-  fuente      String   @default("contacto")
-  estado      String   @default("nuevo")
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([email])
-  @@index([estado])
-  @@index([fuente])
-  @@index([createdAt])
-}
-
-model BlogPost {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  excerpt     String?
-  content     String?
-  coverImage  String?
-  published   Boolean  @default(false)
-  author      String?
-  tags        String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([published])
-  @@index([slug])
-  @@index([createdAt])
-}
-
-model Reserva {
-  id        String   @id @default(cuid())
-  nombre    String
-  email     String
-  telefono  String?
-  empresa   String?
-  nicho     String
-  servicio  String
-  fecha     String
-  hora      String
-  notas     String?
-  estado    String   @default("pendiente")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([estado])
-  @@index([nicho])
-  @@index([createdAt])
 }
