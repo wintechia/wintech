@@ -3,10 +3,10 @@ export const dynamic = 'force-dynamic';
 const ELEVENLABS_KEY = 'sk_e68d9eff63cc4a5cc312895cf310e5a57676d88d83084930';
 
 // Spanish female voices in ElevenLabs
-// "Jessica" (21m0v05SE2XPYSJQVjwR) - warm, professional female
+// "Jessica" (EXAVITQu4vr4xnSDxMaL) - warm, professional female
 // "Rachel" (21m0v06aSE2XPYSJQVjwR) - calm, professional
 // Using a Spanish-optimized voice
-const VOICE_ID = '21m0v05SE2XPYSJQVjwR'; // Jessica - warm professional female
+const VOICE_ID = 'EXAVITQu4vr4xnSDxMaL'; // Jessica - warm professional female
 
 export async function POST(request: Request) {
   try {
