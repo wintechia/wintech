@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 
-const DEEPGRAM_KEY = 'a1986ad17187cddfeefe010304ac8994a9551a0c';
+const DEEPGRAM_KEY = 'process.env.DEEPGRAM_API_KEY || ''';
 
 export async function POST(request: Request) {
   try {

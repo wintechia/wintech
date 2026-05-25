@@ -1,8 +1,8 @@
 export const dynamic = 'force-dynamic';
 
-const RESEND_KEY = 're_ib7MGY7Z_Pk3NC6bAi5uHX1tMWfjcPdrr';
-const FROM_EMAIL = 'WinTech AI <hola@wintech.agency>';
-const ADMIN_EMAIL = 'wintech.ia@gmail.com';
+const RESEND_KEY = process.env.RESEND_API_KEY || '';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'WinTech AI <hola@wintech.agency>';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'wintech.ia@gmail.com';
 
 interface EmailData {
   to: string;

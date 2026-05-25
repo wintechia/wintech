@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 
-const ELEVENLABS_KEY = 'sk_e68d9eff63cc4a5cc312895cf310e5a57676d88d83084930';
+const ELEVENLABS_KEY = 'process.env.ELEVENLABS_API_KEY || ''';
 
 // Spanish female voices in ElevenLabs
 // "Jessica" (21m0v05SE2XPYSJQVjwR) - warm, professional female

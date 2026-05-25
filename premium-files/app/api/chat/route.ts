@@ -1,8 +1,8 @@
 export const dynamic = 'force-dynamic';
 
-const GROQ_API_KEY = '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';
-const OPENROUTER_KEY = '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';
-const ELEVENLABS_KEY = 'sk_e68d9eff63cc4a5cc312895cf310e5a57676d88d83084930';
+const GROQ_API_KEY = 'process.env.GROQ_API_KEY || ''';
+const OPENROUTER_KEY = 'process.env.OPENROUTER_API_KEY || ''';
+const ELEVENLABS_KEY = 'process.env.ELEVENLABS_API_KEY || ''';
 
 const NICHO_PROMPTS: Record<string, string> = {
   'clinica-estetica': `Eres Wincho AI, asistente de voz de WinTech AI. Trabajas para una clínica estética en Colombia.
