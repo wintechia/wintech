@@ -1,9 +1,10 @@
 [build]
-  command = "npx prisma@5.22.0 generate && npm run build"
+  command = "npx prisma@5.22.0 generate && NEXT_PUBLIC_SKIP_DB=true npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
+  NPM_CONFIG_PRODUCTION = "false"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[functions]
+  node_bundler = "nft"
