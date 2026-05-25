@@ -7,3 +7,108 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("admin") // admin, user
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Lead {
+  id           String   @id @default(cuid())
+  nombre       String
+  email        String
+  telefono     String?
+  empresa      String?
+  nicho        String?  // clinica-estetica, dentistas, abogados, talleres, inmobiliarias
+  planInteres  String?
+  mensaje      String?
+  fuente       String   @default("contacto") // contacto, demo, chatbot, landing
+  estado       String   @default("nuevo") // nuevo, contactado, cualificado, convertido, perdido
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([email])
+  @@index([estado])
+  @@index([nicho])
+  @@index([createdAt])
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String?
+  content     String   @db.Text
+  coverImage  String?
+  published   Boolean  @default(false)
+  author      String?
+  tags        String[]
+  category    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+  @@index([createdAt])
+}
+
+model Reserva {
+  id        String   @id @default(cuid())
+  nombre    String
+  email     String
+  telefono  String?
+  empresa   String?
+  nicho     String   // clinica-estetica, dentistas, abogados, talleres, inmobiliarias
+  servicio  String   // e.g. "Botox", "Consulta dental", "Consulta legal"
+  fecha     String   // YYYY-MM-DD
+  hora      String   // HH:MM
+  notas     String?
+  estado    String   @default("pendiente") // pendiente, confirmada, cancelada, completada
+  source    String   @default("web") // web, chatbot, whatsapp, telefono
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([estado])
+  @@index([nicho])
+  @@index([fecha])
+  @@index([createdAt])
+}
+
+model ChatSession {
+  id        String   @id @default(cuid())
+  sessionId String   @unique
+  nicho     String?
+  messages  Json     // Array of {role, content}
+  status    String   @default("active") // active, closed, archived
+  leadId    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sessionId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Demo {
+  id          String   @id @default(cuid())
+  leadId      String?
+  nicho       String   // clinica-estetica, dentistas, abogados, talleres, inmobiliarias
+  token       String   @unique
+  url         String?  // Generated demo URL
+  expiresAt   DateTime
+  status      String   @default("active") // active, expired, converted
+  conversionAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([token])
+  @@index([expiresAt])
+  @@index([status])
+  @@index([createdAt])
+}

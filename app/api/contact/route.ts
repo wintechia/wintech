@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 import { prisma } from '@/lib/db';
-import { notifyNewLead, sendWelcomeEmail } from './email';
+import { notifyNewLead, sendWelcomeEmail } from '@/lib/email';
 
 export async function POST(request: Request) {
   try {
